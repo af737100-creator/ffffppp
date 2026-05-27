@@ -1,0 +1,4 @@
+-keep class com.example.recorder.** { *; }
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-dontwarn com.example.recorder.**

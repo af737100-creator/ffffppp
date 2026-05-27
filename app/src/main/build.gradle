@@ -1,16 +1,22 @@
-android {
-    compileSdk 35 // متوافق مع أندرويد 15
-
-    defaultConfig {
-        applicationId "com.example.recorder"
-        minSdkVersion 26 // يدعم من أندرويد 8 (Oreo) فما فوق
-        targetSdkVersion 35
-        versionCode 1
-        versionName "1.0"
+// Top-level build.gradle
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin - إصدار مستقر
+        classpath 'com.android.tools.build:gradle:8.5.2'
     }
 }
 
-dependencies {
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'com.google.android.material:material:1.12.0'
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
 }
